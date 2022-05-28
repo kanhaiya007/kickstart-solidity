@@ -1,0 +1,29 @@
+{
+  "name": "kickstart-solidity",
+  "version": "1.0.0",
+  "description": "A sample project to learn solidity and web3",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "compile": "node compile.js",
+    "deploy": "node deploy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kanhaiya007/kickstart-solidity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanhaiya007/kickstart-solidity/issues"
+  },
+  "homepage": "https://github.com/kanhaiya007/kickstart-solidity#readme",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.8",
+    "fs-extra": "^10.1.0",
+    "ganache": "^7.2.0",
+    "mocha": "^10.0.0",
+    "solc": "^0.8.14-fixed",
+    "web3": "^1.7.3"
+  }
+}
