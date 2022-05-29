@@ -1,11 +1,16 @@
+require("dotenv").config();
+console.log(process.env);
+
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("web3");
 const compiledFactory = require("./build/CampaignFactory.json");
 
 const util = require("util");
 
+console.log(process.env.SECRET_RECOVERY_KEY);
+
 const provider = new HDWalletProvider(
-    "bonus symbol move glow sponsor kingdom situate taxi bone tip warrior kiss",
+    process.env.SECRET_RECOVERY_KEY,
     "https://rinkeby.infura.io/v3/fd7069fc816f4f47a69fd9ef883946eb"
 );
 
