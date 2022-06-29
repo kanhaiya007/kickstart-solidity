@@ -17,13 +17,19 @@ beforeEach(async () => {
         .send({ from: accounts[0], gas: 5000000 });
 
     await factory.methods
-        .createCampaign("100")
+        .createCampaign(
+            "This is a test title",
+            "This is a test description.",
+            "",
+            "Kanahaiya",
+            "100"
+        )
         .send({ from: accounts[0], gas: 5000000 });
     [campaignAddress] = await factory.methods.getAllCampaign().call();
 
     campaign = await new web3.eth.Contract(
         compiledCampaign.abi,
-        campaignAddress
+        campaignAddress.campaignAddress
     );
 });
 
@@ -62,7 +68,7 @@ describe("Campaign", () => {
             .createRequest("Buy Batteries", "100", accounts[2])
             .send({ from: accounts[0], gas: "10000000" });
 
-        const request = await campaign.methods.requestArray(0).call();
+        const request = await campaign.methods.transferRequestArray(0).call();
         assert.equal("Buy Batteries", request.description);
 
         try {
@@ -102,5 +108,11 @@ describe("Campaign", () => {
         balance = parseFloat(balance);
         console.log(balance);
         assert(balance > 103);
+    });
+
+    it("should check the details of the campaign", async () => {
+        const details = await campaign.methods.campaignDetails().call();
+        assert.equal(details.title, "This is a test title");
+        assert.equal(details.ownerName, "Kanahaiya");
     });
 });
