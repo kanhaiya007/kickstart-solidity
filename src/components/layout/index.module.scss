@@ -1,0 +1,10 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.children {
+    flex: 1;
+    background-color: $color-textDark;
+}

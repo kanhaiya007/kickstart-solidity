@@ -1,0 +1,19 @@
+.campaignCard {
+    max-width: 250px;
+    color: white;
+    margin: 15px;
+    h2 {
+        font-size: 15px;
+    }
+    p {
+        font-size: 12px;
+        margin: 7px 0;
+        color: rgb(216, 211, 211);
+    }
+    p.label {
+        font-size: 9px;
+        text-transform: uppercase;
+        margin-top: 15px;
+        color: rgb(255, 255, 255);
+    }
+}

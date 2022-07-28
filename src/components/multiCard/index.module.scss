@@ -1,0 +1,23 @@
+.multiCard {
+    background-color: white;
+    ul {
+        padding: 0;
+        overflow: auto;
+        display: flex;
+        border: 1px solid rgba(63, 60, 60, 0.05);
+        border-radius: 2px;
+        box-shadow: 0 12px 30px rgba(63, 60, 60, 0.05);
+        flex-wrap: wrap;
+    }
+    li {
+        min-width: 250px;
+        padding: 20px;
+        text-align: center;
+        flex: 1;
+        list-style-type: none;
+        white-space: nowrap;
+    }
+    li:not(:last-child) {
+        border-right: 1px solid rgba(63, 60, 60, 0.05);
+    }
+}
